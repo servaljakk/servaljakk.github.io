@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AT中の三択</title>
+    <style>
+      body {
+        font-size: 24px;
+        text-align: center;
+      }
+      button {
+        font-size: 24px;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #3e8e41;
+      }
+      #result {
+        font-size: 48px;
+        color: red;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>AT中の三択</h1>
+    <button id="choiceBtn">選択する</button>
+    <div id="result"></div>
+    <script>
+      const choices = ['左', '中', '右'];
+      const message = 'AT中の選択肢だよ！どれを選ぶ？';
+
+      function showChoice() {
+        const randomIndex = Math.floor(Math.random() * choices.length);
+        return choices[randomIndex];
+      }
+
+      function showATChoice() {
+        const randomChoice = showChoice();
+        const resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = '今の熱い選択は...' + randomChoice + '！！';
+      }
+
+      const choiceBtn = document.getElementById('choiceBtn');
+      choiceBtn.addEventListener('click', showATChoice);
+    </script>
+  </body>
+</html>
